@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>東北雪國散策</title>
-    <!-- 可達鴨 ICON -->
+    <!-- 可達鴨 ICON 設定 -->
     <link rel="icon" type="image/png" href="https://img.icons8.com/color/96/psyduck.png">
     <link rel="apple-touch-icon" href="https://img.icons8.com/color/180/psyduck.png">
     
@@ -21,7 +21,7 @@
             --tag-stay: #7b6c61;
             --tag-tip: #4a6c45;
             --tag-shop: #e07a5f;
-            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
 
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -77,22 +77,12 @@
         .card {
             background: var(--card-bg);
             border-radius: 12px;
-            margin-bottom: 20px; /* 加大間距 */
+            padding: 15px 18px;
+            margin-bottom: 12px;
             box-shadow: var(--shadow);
             border-left: 4px solid #ddd;
             position: relative;
-            overflow: hidden; /* 為了圖片圓角 */
         }
-        /* 卡片上方的大圖 */
-        .card-img-header {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .card-content { padding: 15px 18px; }
-
         .card.transport { border-left-color: var(--tag-transport); }
         .card.sightseeing { border-left-color: var(--accent); }
         .card.food { border-left-color: var(--tag-food); }
@@ -100,26 +90,25 @@
         .card.shopping { border-left-color: var(--tag-shop); }
 
         .time { font-weight: 700; color: var(--primary); font-size: 1.1rem; display: flex; align-items: center; justify-content: space-between; }
-        .location { font-size: 1.05rem; font-weight: 600; margin: 5px 0; }
-        .desc { font-size: 0.9rem; color: #666; margin-top: 6px; }
+        .location { font-size: 1rem; font-weight: 500; margin: 5px 0; }
+        .desc { font-size: 0.85rem; color: #666; margin-top: 6px; }
 
         .tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
-        .tag { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-weight: 500; }
+        .tag { font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; font-weight: 500; }
         .tag-must-eat { background: #fff4e5; color: #b47d1f; border: 1px solid #ffe0b2; }
         .tag-tip { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
         .tag-shop { background: #ffe0e0; color: #c62828; border: 1px solid #ffcdd2; }
-        .tag-code { background: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7; font-family: monospace; }
 
-        .actions { margin-top: 15px; display: flex; gap: 10px; }
+        .actions { margin-top: 12px; display: flex; gap: 8px; }
         .btn {
             flex: 1;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 10px;
+            padding: 8px;
             border-radius: 8px;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             cursor: pointer;
             transition: 0.2s;
@@ -139,7 +128,7 @@
             font-size: 0.9rem;
         }
 
-        /* Modal */
+        /* Modal Styles */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.6); z-index: 2000;
@@ -161,13 +150,16 @@
         }
         .modal-title { font-weight: bold; font-size: 1.1rem; color: var(--accent); }
         .modal-close { background: none; border: none; font-size: 1.5rem; color: #888; padding: 5px; }
-        .modal-body { padding: 20px; padding-bottom: 40px;}
         
+        /* Modal Content */
+        .modal-img-container { width: 100%; height: 200px; overflow: hidden; background: #eee; }
+        .modal-img { width: 100%; height: 100%; object-fit: cover; }
+        .modal-body { padding: 20px; padding-bottom: 40px;}
         .detail-summary { font-size: 0.95rem; color: #444; margin-bottom: 20px; line-height: 1.8; border-left: 3px solid var(--accent); padding-left: 15px; }
-        .detail-h3 { font-size: 0.95rem; font-weight: bold; color: var(--primary); margin-bottom: 8px; display: flex; align-items: center; margin-top: 25px;}
+        .detail-h3 { font-size: 0.95rem; font-weight: bold; color: var(--primary); margin-bottom: 8px; display: flex; align-items: center; margin-top: 20px;}
         .detail-h3 i { margin-right: 8px; color: var(--accent); width: 20px; text-align: center; }
         .detail-list { padding-left: 20px; margin: 0; color: #555; font-size: 0.9rem; }
-        .detail-list li { margin-bottom: 8px; }
+        .detail-list li { margin-bottom: 6px; }
         .detail-history { background: #f8f8f8; padding: 15px; border-radius: 10px; font-size: 0.85rem; color: #666; margin-top: 25px; }
 
         /* Tips & Info */
@@ -178,8 +170,8 @@
         .code-box { background: #f8f9fa; padding: 10px; border-radius: 6px; margin-top: 5px; font-family: monospace; font-size: 1.1rem; text-align: center; border: 1px dashed #ccc; color: var(--accent); }
         
         .tip-item { margin-bottom: 15px; font-size: 0.9rem; color: #444; display: flex; align-items: flex-start;}
-        .tip-icon { color: var(--accent); margin-right: 12px; margin-top: 3px; font-size: 1.1rem;}
-        .tip-content strong { display: block; color: var(--primary); margin-bottom: 3px; font-size: 0.95rem; }
+        .tip-icon { color: var(--accent); margin-right: 10px; margin-top: 3px; }
+        .tip-content strong { display: block; color: var(--primary); margin-bottom: 2px; }
 
     </style>
 </head>
@@ -218,4 +210,502 @@
             <div class="code-box">1651997484</div>
         </div>
         <div class="data-row" style="display:block; margin-top:10px">
-            <div style="color:#666; font-size:0.8
+            <div style="color:#666; font-size:0.8rem">回程 (虎航) PNR / (長榮) 訂位</div>
+            <div class="code-box">T2PIGL / FIQNMI</div>
+        </div>
+    </div>
+    <div class="info-block">
+        <div class="info-title"><i class="fas fa-bed"></i> 住宿導航</div>
+        <div style="margin-bottom:15px">
+            <div style="font-weight:bold; color:var(--accent);">The OneFive Sendai</div>
+            <div style="font-size:0.8rem; color:#666;">11/27 - 11/29</div>
+            <a href="https://www.google.com/maps/search/?api=1&query=The+OneFive+Sendai" class="btn btn-nav" style="width:100%; margin-top:5px;"><i class="fas fa-location-arrow"></i> 導航</a>
+        </div>
+        <div style="margin-bottom:15px; border-top:1px solid #eee; padding-top:10px;">
+            <div style="font-weight:bold; color:var(--accent);">Richmond Hotel Morioka Ekimae</div>
+            <div style="font-size:0.8rem; color:#666;">11/29 - 12/1</div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Richmond+Hotel+Morioka+Ekimae" class="btn btn-nav" style="width:100%; margin-top:5px;"><i class="fas fa-location-arrow"></i> 導航</a>
+        </div>
+        <div style="border-top:1px solid #eee; padding-top:10px;">
+            <div style="font-weight:bold; color:var(--accent);">HOTEL MYSTAYS Aomori Station</div>
+            <div style="font-size:0.8rem; color:#666;">12/1 - 12/4</div>
+            <a href="https://www.google.com/maps/search/?api=1&query=HOTEL+MYSTAYS+Aomori+Station" class="btn btn-nav" style="width:100%; margin-top:5px;"><i class="fas fa-location-arrow"></i> 導航</a>
+        </div>
+    </div>
+</div>
+
+<!-- 旅遊須知頁面 (取代預算) -->
+<div id="tab-tips" class="section">
+    <div class="info-block">
+        <div class="info-title"><i class="fas fa-exclamation-circle"></i> 東北冬季旅遊須知</div>
+        
+        <div class="tip-item">
+            <i class="fas fa-tshirt tip-icon"></i>
+            <div class="tip-content">
+                <strong>洋蔥式穿搭</strong>
+                戶外極冷(0度以下)，但室內暖氣非常強(25度以上)。建議外層防風防水大衣，內層好穿脫。不要穿太厚的高領毛衣，進室內會熱死。
+            </div>
+        </div>
+
+        <div class="tip-item">
+            <i class="fas fa-shoe-prints tip-icon"></i>
+            <div class="tip-content">
+                <strong>鞋子防滑 (Suberidome)</strong>
+                雪地最怕滑倒。請穿著底部紋路深的防水靴子。如果鞋子不防滑，可在當地便利商店或藥妝店購買「簡易冰爪」套在鞋上。走路時「小步走、整隻腳掌著地」。
+            </div>
+        </div>
+
+        <div class="tip-item">
+            <i class="fas fa-train tip-icon"></i>
+            <div class="tip-content">
+                <strong>電車車門按鈕</strong>
+                東北的電車為了保暖，車門通常不會自動開啟。上下車時請按下門邊的「開/Open」按鈕。
+            </div>
+        </div>
+
+        <div class="tip-item">
+            <i class="fas fa-clock tip-icon"></i>
+            <div class="tip-content">
+                <strong>交通延誤對策</strong>
+                冬季東北新幹線和電車常因大雪或強風延遲甚至停駛。行程請保留彈性，並隨時注意 JR 東日本官網的運行情報。
+            </div>
+        </div>
+
+        <div class="tip-item">
+            <i class="fas fa-yen-sign tip-icon"></i>
+            <div class="tip-content">
+                <strong>現金準備</strong>
+                雖然大城市可刷卡，但像田澤湖巴士、狐狸村門票、部分拉麵店或小吃攤可能只收現金。身上請隨時準備千圓鈔票和硬幣。
+            </div>
+        </div>
+        
+         <div class="tip-item">
+            <i class="fas fa-bath tip-icon"></i>
+            <div class="tip-content">
+                <strong>溫泉禮儀</strong>
+                進入浴池前務必先將身體洗淨。毛巾不可放入浴池中。有刺青者請先確認飯店規定或使用膠布遮蓋。
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="bottom-nav">
+    <div class="nav-item active" onclick="switchTab('itinerary', this)"><i class="fas fa-map-marked-alt"></i> 行程</div>
+    <div class="nav-item" onclick="switchTab('essentials', this)"><i class="fas fa-passport"></i> 資訊</div>
+    <div class="nav-item" onclick="switchTab('tips', this)"><i class="fas fa-info-circle"></i> 須知</div>
+</nav>
+
+<!-- Modal Overlay -->
+<div id="detail-modal" class="modal-overlay">
+    <div class="modal-card">
+        <div class="modal-header">
+            <span class="modal-title" id="modal-title">景點標題</span>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-img-container" id="modal-img-wrapper" style="display:none">
+            <img src="" class="modal-img" id="modal-image" alt="Spot Image">
+        </div>
+        <div class="modal-body" id="modal-content">
+            <!-- Content Injected via JS -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // --- 行程資料 ---
+    // 圖片來源：Unsplash Source (高品質示意圖)
+    const tripData = [
+        {
+            date: "11/27 (四)",
+            location: "仙台",
+            weather: "仙台: ☁️ 8°C/3°C",
+            items: [
+                { time: "14:35", title: "起飛 (TPE)", type: "transport", desc: "前往仙台機場 (SDJ)" },
+                { time: "18:45", title: "抵達仙台機場", type: "transport", desc: "入境約1小時，準備買票" },
+                { time: "19:45", title: "購買車票", type: "transport", desc: "仙台機場線 (660日圓)" },
+                { time: "20:15", title: "搭車前往市區", type: "transport", desc: "20:45 抵達仙台車站" },
+                { time: "20:45", title: "Check-in", type: "stay", desc: "步行至 The OneFive Sendai", link: "The OneFive Sendai" },
+                { time: "21:00", title: "Uniqlo, GU", type: "shopping", desc: "車站周邊簡單採買保暖衣物", tags: ["購物"], link: "Sendai Station" },
+                { time: "21:30", title: "晚餐：仙台牛舌", type: "food", desc: "推薦：利久、善治郎、司", tags: ["必吃牛舌"], link: "Sendai Station Gyutan",
+                  detail: {
+                      img: "https://images.unsplash.com/photo-1596452906413-4043b2728956?q=80&w=600",
+                      summary: "來到仙台沒吃牛舌，等於沒來過！仙台牛舌以厚切、炭烤聞名，口感Q彈多汁。",
+                      spots: ["善治郎 (排隊名店)", "利久 (連鎖穩定)", "司 (在地人推薦)"],
+                      mustDo: ["點「極厚」牛舌定食", "喝清爽的牛尾湯"],
+                      buy: ["真空包裝牛舌"],
+                      history: "二戰後仙台物資缺乏，佐野啟四郎廚師將美軍不吃的牛舌加以調理，發明了炭烤牛舌定食。"
+                  }
+                },
+                { time: "22:30", title: "商店街散策", type: "sightseeing", desc: "熟悉周邊環境", link: "Sendai Station" }
+            ]
+        },
+        {
+            date: "11/28 (五)",
+            location: "狐狸村",
+            weather: "白石: ☁️ 7°C/1°C",
+            items: [
+                { time: "09:05", title: "JR 前往白石站", type: "transport", desc: "東北本線 5號月台 (47分鐘)", link: "Sendai Station" },
+                { time: "09:53", title: "抵達白石站", type: "transport", desc: "步行2分鐘去排公車" },
+                { time: "10:00", title: "採買午餐", type: "food", desc: "⚠️ 去便利商店買食物上山 (山上沒東西吃)", tags: ["重要"], link: "Shiroishi Station Convenience Store" },
+                { time: "10:20", title: "巴士往狐狸村", type: "transport", desc: "⚠️ 一天兩班，切勿遲到！(藏王山麓線)", tags: ["關鍵時刻"], link: "Shiroishi Station Bus Stop" },
+                { time: "10:50", title: "藏王狐狸村", type: "sightseeing", desc: "與狐狸互動、吃自備午餐", link: "Zao Fox Village",
+                  detail: {
+                      img: "https://images.unsplash.com/photo-1470163395405-d2b80e7450ed?q=80&w=600",
+                      summary: "世界上唯一專門飼養狐狸的動物園，放養著超過100隻狐狸。冬天雪地中的狐狸毛色最蓬鬆可愛。",
+                      spots: ["放養區", "抱狐狸體驗區", "稻荷神社"],
+                      mustDo: ["參加抱狐狸體驗", "拍攝雪地狐狸"],
+                      buy: ["狐狸玩偶"],
+                      history: "注意：請勿觸摸放養區的狐狸，會咬人！塑膠袋摩擦聲會吸引狐狸，建議不要帶塑膠袋入內。"
+                  }
+                },
+                { time: "14:40", title: "準備搭車", type: "transport", desc: "步行至巴士站排隊" },
+                { time: "15:00", title: "巴士回白石站", type: "transport", desc: "⚠️ 錯過就要搭計程車了", tags: ["關鍵時刻"], link: "Zao Fox Village Bus Stop" },
+                { time: "15:55", title: "JR 返回仙台", type: "transport", desc: "東北本線 (48分鐘)" },
+                { time: "18:00", title: "仙台晚餐", type: "food", desc: "自由覓食", link: "Sendai Station" }
+            ]
+        },
+        {
+            date: "11/29 (六)",
+            location: "仙台→盛岡",
+            weather: "仙台: ☀️ 9°C/2°C",
+            items: [
+                { time: "09:00", title: "Loople 仙台巴士", type: "transport", desc: "購買一日券 ¥630，仙台站出發", link: "Sendai Station Bus Pool" },
+                { time: "09:13", title: "瑞鳳殿", type: "sightseeing", desc: "停留約1小時", link: "Zuihoden",
+                  detail: {
+                      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Zuihoden_2010.jpg/640px-Zuihoden_2010.jpg",
+                      summary: "仙台藩祖伊達政宗的陵廟。建築風格為華麗的「桃山樣式」，色彩鮮豔。",
+                      spots: ["涅槃門", "本殿"],
+                      mustDo: ["欣賞黑漆與金箔的對比"],
+                      buy: ["伊達家家徽御守"],
+                      history: "伊達政宗是日本戰國時代著名的「獨眼龍」武將，建立了仙台藩。"
+                  }
+                },
+                { time: "10:38", title: "仙台城跡", type: "sightseeing", desc: "停留/午餐 (青葉城本丸會館)", tags: ["必拍地標"], link: "Sendai Castle Ruins",
+                   detail: {
+                      img: "https://images.unsplash.com/photo-1545634591-591325143003?q=80&w=600",
+                      summary: "站在高台上可以俯瞰整個仙台市與太平洋，伊達政宗騎馬像是地標。",
+                      spots: ["伊達政宗騎馬像", "本丸會館"],
+                      mustDo: ["與騎馬像合影", "喝毛豆泥奶昔 (Zunda Shake)"],
+                      buy: ["萩之月", "毛豆泥麻糬"],
+                      history: "當年為了表示對德川幕府沒有叛意，特意不建造天守閣。也是《荒城之月》的靈感來源。"
+                   }
+                },
+                { time: "13:43", title: "大崎八幡宮", type: "sightseeing", desc: "國寶級社殿", link: "Osaki Hachimangu" },
+                { time: "15:34", title: "青葉通一番町", type: "shopping", desc: "購物逛街，看櫸木大道", link: "Ichibancho Shopping Arcade" },
+                { time: "19:20", title: "取行李", type: "transport", desc: "返回飯店/車站拿行李" },
+                { time: "19:53", title: "新幹線往盛岡", type: "transport", desc: "東北新幹線 (39分鐘)", link: "Sendai Station" },
+                { time: "20:33", title: "入住 Richmond Hotel", type: "stay", desc: "盛岡站前", link: "Richmond Hotel Morioka Ekimae" }
+            ]
+        },
+        {
+            date: "11/30 (日)",
+            location: "角館・田澤湖",
+            weather: "秋田: 🌨️ 4°C/-1°C",
+            items: [
+                { time: "08:48", title: "新幹線往角館", type: "transport", desc: "秋田新幹線 (45分鐘)", link: "Morioka Station" },
+                { time: "09:35", title: "角館武家屋敷", type: "sightseeing", desc: "漫步江戶風情古街", link: "Kakunodate Samurai District",
+                  detail: {
+                      img: "https://images.unsplash.com/photo-1554790089-a5c928424072?q=80&w=600",
+                      summary: "被稱為「陸奧的小京都」。黑色板牆的武士宅邸在雪中非常有水墨畫的意境。",
+                      spots: ["青柳家", "石黑家"],
+                      mustDo: ["參觀武士刀展覽", "拍照"],
+                      buy: ["樺細工 (櫻花樹皮工藝品)"],
+                      history: "保留了完整的江戶城市規劃，黑牆與道路寬度都有歷史規範。"
+                  }
+                },
+                { time: "11:43", title: "JR 往田澤湖", type: "transport", desc: "搭乘火車 (19分鐘)" },
+                { time: "12:02", title: "午餐：Momoya", type: "food", desc: "必吃：比內地雞親子丼", tags: ["秋田名物"], link: "Momoya Tazawako",
+                   detail: {
+                      img: "https://tabelog.com/imgview/original?id=r8178656149466",
+                      summary: "車站前食堂，能一次吃到秋田兩大名物。",
+                      spots: ["二樓座位區"],
+                      mustDo: ["比內地雞親子丼", "稻庭烏龍麵"],
+                      buy: ["無"],
+                      history: "比內地雞是日本三大美味雞之一，肉質緊實。"
+                  }
+                },
+                { time: "13:25", title: "田澤湖周遊巴士", type: "transport", desc: "⚠️ 一天僅三班，車站右側1號站牌", tags: ["關鍵時刻"], link: "Tazawako Station Bus" },
+                { time: "13:55", title: "辰子像 (瀉尻)", type: "sightseeing", desc: "停留20分鐘拍照", link: "Statue of Tatsuko",
+                  detail: {
+                      img: "https://images.unsplash.com/photo-1610444583164-9b8823f0340c?q=80&w=600",
+                      summary: "日本最深的湖泊，冬天不結冰。金色辰子像是地標。",
+                      spots: ["金色辰子像", "浮木神社"],
+                      mustDo: ["在鳥居前拍湖景", "抽籤"],
+                      buy: ["無"],
+                      history: "傳說少女辰子為了永保青春喝乾泉水變成龍，守護著田澤湖。"
+                  }
+                },
+                { time: "14:25", title: "御座石神社", type: "sightseeing", desc: "停留10分鐘" },
+                { time: "14:56", title: "回到田澤湖站", type: "transport", desc: "巴士抵達" },
+                { time: "15:53", title: "JR 返回盛岡", type: "transport", desc: "田澤湖線 (65分鐘)" },
+                { time: "17:00", title: "晚餐：米棒鍋", type: "food", desc: "秋田鄉土料理", tags: ["必吃鍋物"], link: "Morioka Station Kiritanpo" }
+            ]
+        },
+        {
+            date: "12/1 (一)",
+            location: "盛岡→青森",
+            weather: "盛岡: ☁️ 5°C/-2°C",
+            items: [
+                { time: "09:30", title: "盛岡城跡 & 櫻山神社", type: "sightseeing", desc: "參拜烏帽子岩", link: "Morioka Castle Site Park",
+                   detail: {
+                      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Morioka_Castle_02.jpg/640px-Morioka_Castle_02.jpg",
+                      summary: "盛岡城內的櫻山神社有巨大的「烏帽子岩」，相傳能消災解厄。",
+                      spots: ["烏帽子岩", "石垣遺跡"],
+                      mustDo: ["摸烏帽子岩求好運"],
+                      buy: ["南部鐵器"],
+                      history: "曾是南部藩的居城，以花崗岩石垣聞名。"
+                   }
+                },
+                { time: "12:00", title: "岩手銀行赤煉瓦館", type: "sightseeing", desc: "辰野金吾設計", link: "Iwate Bank Red Brick Hall" },
+                { time: "13:30", title: "盛岡八幡宮", type: "sightseeing", desc: "抽釣魚籤！", tags: ["有趣體驗"], link: "Morioka Hachimangu" },
+                { time: "15:00", title: "大通商業街", type: "shopping", desc: "當地逛街區域" },
+                { time: "18:00", title: "盛岡三大麵", type: "food", desc: "冷麵、炸醬麵或碗子蕎麥麵", tags: ["必吃麵食"], link: "Morioka Reimen",
+                  detail: {
+                      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Morioka_Reimen.jpg/640px-Morioka_Reimen.jpg",
+                      summary: "盛岡特色麵食：「冷麵」Q彈酸辣；「炸醬麵」拌肉味噌；「碗子蕎麥麵」吃到飽挑戰。",
+                      spots: ["盛樓閣", "白龍", "東家"],
+                      mustDo: ["喜歡吃辣選冷麵", "喜歡挑戰選蕎麥麵"],
+                      buy: ["生麵禮盒"],
+                      history: "盛岡冷麵源自平壤冷麵，改良後加入西瓜/水梨，成為在地美食。"
+                  }
+                },
+                { time: "19:37", title: "新幹線往青森", type: "transport", desc: "一小時到青森", link: "Morioka Station" },
+                { time: "20:40", title: "入住 MYSTAYS", type: "stay", desc: "青森站附近", link: "HOTEL MYSTAYS Aomori Station" }
+            ]
+        },
+        {
+            date: "12/2 (二)",
+            location: "弘前",
+            weather: "弘前: 🌨️ 3°C/-1°C",
+            items: [
+                { time: "09:52", title: "JR 前往弘前", type: "transport", desc: "奧羽本線", link: "Aomori Station" },
+                { time: "10:32", title: "抵達弘前", type: "transport", desc: "搭土手町循環巴士(15分)" },
+                { time: "10:45", title: "弘前睡魔村", type: "sightseeing", desc: "體驗津輕文化", link: "Tsugaru-han Neputa Village",
+                   detail: {
+                       img: "https://images.unsplash.com/photo-1533052770659-00c733621404?q=80&w=600",
+                       summary: "全年都能體驗弘前睡魔祭。欣賞巨大的扇形燈籠與三味線演奏。",
+                       spots: ["燈籠展示", "三味線演奏廳"],
+                       mustDo: ["敲擊太鼓", "聽三味線表演"],
+                       buy: ["金魚燈籠", "津輕塗"],
+                       history: "弘前的睡魔燈籠多為「扇形」，不同於青森市的人形。"
+                   }
+                },
+                { time: "13:30", title: "弘前城 (雪景)", type: "sightseeing", desc: "冬季城堡美景", link: "Hirosaki Castle",
+                   detail: {
+                       img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Hirosaki_Castle_keep_201204.jpg/640px-Hirosaki_Castle_keep_201204.jpg",
+                       summary: "現存12天守之一。冬天護城河結冰積雪，紅橋白雪相映成趣。",
+                       spots: ["天守閣", "下乘橋"],
+                       mustDo: ["拍紅橋與天守閣"],
+                       buy: ["無"],
+                       history: "為了修復石垣，天守閣目前被整個「抬起來」移動了位置，是難得景象。"
+                   }
+                },
+                { time: "15:00", title: "大正浪漫喫茶室", type: "food", desc: "⚠️ 先去抽號碼牌！", tags: ["必吃甜點"], link: "Taisho Roman Tea Room",
+                   detail: {
+                       img: "https://tabelog.com/imgview/original?id=r0687743232675",
+                       summary: "藤田紀念庭園內的洋房咖啡廳，氣氛復古浪漫。集結了弘前多家名店的蘋果派。",
+                       spots: ["窗邊座位"],
+                       mustDo: ["點多款蘋果派評比", "喝蘋果茶"],
+                       buy: ["無"],
+                       history: "弘前是蘋果之城，這家店讓你不用跑遍全城就能吃到各家精華。"
+                   }
+                },
+                { time: "17:41", title: "返回青森", type: "transport", desc: "奧羽本線", link: "Hirosaki Station" }
+            ]
+        },
+        {
+            date: "12/3 (三)",
+            location: "青森市區",
+            weather: "青森: 🌨️ 2°C/-2°C",
+            items: [
+                { time: "10:00", title: "青森魚菜中心", type: "food", desc: "古川市場：自製海鮮丼 (Nokke Don)", tags: ["必吃海鮮"], link: "Aomori Gyosai Center",
+                   detail: {
+                       img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Nokkedon_01.jpg/640px-Nokkedon_01.jpg",
+                       summary: "購買餐券後，拿著白飯在市場內遊走，想吃什麼海鮮就換什麼。",
+                       spots: ["各海鮮攤位"],
+                       mustDo: ["必換帆立貝"],
+                       buy: ["乾貨"],
+                       history: "源於希望能讓旅客少量多樣品嘗美味，如今是青森觀光代名詞。"
+                   }
+                },
+                { time: "12:00", title: "睡魔之家 WARASSE", type: "sightseeing", desc: "參觀巨型燈籠", link: "Nebuta Museum WA RASSE",
+                   detail: {
+                       img: "https://images.unsplash.com/photo-1565675207705-49298453f638?q=80&w=600",
+                       summary: "展示真正睡魔祭中出場的大型得獎燈籠，近看非常震撼。",
+                       spots: ["燈籠展示廳", "觸摸體驗區"],
+                       mustDo: ["近距離看燈籠骨架"],
+                       buy: ["蘋果汁", "睡魔面具"],
+                       history: "睡魔祭起源是為了趕跑妨礙農作的「睡魔」(瞌睡蟲)。"
+                   }
+                },
+                { time: "15:00", title: "A-FACTORY", type: "shopping", desc: "買伴手禮、西打酒", tags: ["買伴手禮"], link: "A-FACTORY",
+                   detail: {
+                       img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/A-FACTORY.jpg/640px-A-FACTORY.jpg",
+                       summary: "車站旁的倉庫改建商場，買蘋果伴手禮的天堂。",
+                       spots: ["西打酒工廠", "Gelato"],
+                       mustDo: ["吃蘋果冰淇淋", "試喝蘋果酒"],
+                       buy: ["希望之露蘋果汁", "蘋果咖哩"],
+                       history: "無"
+                   }
+                },
+                { time: "18:00", title: "晚餐：帆立貝/拉麵", type: "food", desc: "津輕拉麵或味噌咖哩牛奶拉麵", link: "Aomori Station Ramen" }
+            ]
+        },
+        {
+            date: "12/4 (四)",
+            location: "返程",
+            weather: "青森: ☁️ 3°C/0°C",
+            items: [
+                { time: "10:00", title: "退房寄行李", type: "stay", desc: "HOTEL MYSTAYS" },
+                { time: "11:00", title: "最後採買", type: "shopping", desc: "車站周邊商店街", link: "Aomori Station" },
+                { time: "13:00", title: "巴士往機場", type: "transport", desc: "前往青森機場 (¥710)", link: "Aomori Station Bus Stop" },
+                { time: "13:40", title: "抵達機場", type: "transport", desc: "辦理登機" },
+                { time: "15:30", title: "起飛", type: "transport", desc: "再見東北！", link: "" }
+            ]
+        }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+        renderDayNav();
+        renderDay(0);
+        
+        document.getElementById('detail-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    });
+
+    function renderDayNav() {
+        const nav = document.getElementById('day-nav');
+        nav.innerHTML = '';
+        tripData.forEach((day, index) => {
+            const chip = document.createElement('div');
+            chip.className = `day-chip ${index === 0 ? 'active' : ''}`;
+            chip.innerText = day.date;
+            chip.onclick = () => renderDay(index);
+            nav.appendChild(chip);
+        });
+    }
+
+    function renderDay(index) {
+        document.querySelectorAll('.day-chip').forEach((chip, i) => {
+            chip.classList.toggle('active', i === index);
+        });
+        document.getElementById('weather-text').innerText = tripData[index].weather;
+
+        const content = document.getElementById('itinerary-content');
+        content.innerHTML = '';
+
+        tripData[index].items.forEach((item, itemIdx) => {
+            const card = document.createElement('div');
+            card.className = `card ${item.type}`;
+            
+            let tagsHtml = '';
+            if (item.tags) {
+                tagsHtml = `<div class="tags">` + 
+                    item.tags.map(t => {
+                        let tagClass = 'tag';
+                        if(t.includes('必吃')) tagClass += ' tag-must-eat';
+                        if(t.includes('關鍵') || t.includes('注意')) tagClass += ' tag-tip';
+                        if(t.includes('購物')) tagClass += ' tag-shop';
+                        return `<span class="${tagClass}">${t}</span>`;
+                    }).join('') + 
+                `</div>`;
+            }
+
+            let actionBtns = '<div class="actions">';
+            if (item.link) {
+                const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.link)}`;
+                actionBtns += `<a href="${mapLink}" target="_blank" class="btn btn-nav"><i class="fas fa-location-arrow"></i> 導航</a>`;
+            }
+            if (item.detail) {
+                actionBtns += `<div class="btn btn-info" onclick="openModal(${index}, ${itemIdx})"><i class="fas fa-book-open"></i> 攻略</div>`;
+            }
+            actionBtns += '</div>';
+
+            card.innerHTML = `
+                <div class="time">${item.time} <span><i class="fas ${getTypeIcon(item.type)}"></i></span></div>
+                <div class="location">${item.title}</div>
+                <div class="desc">${item.desc}</div>
+                ${tagsHtml}
+                ${actionBtns}
+            `;
+            content.appendChild(card);
+        });
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    function getTypeIcon(type) {
+        switch(type) {
+            case 'transport': return 'fa-train';
+            case 'food': return 'fa-utensils';
+            case 'stay': return 'fa-bed';
+            case 'sightseeing': return 'fa-camera';
+            case 'shopping': return 'fa-shopping-bag';
+            default: return 'fa-circle';
+        }
+    }
+
+    function switchTab(tabId, el) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+        el.classList.add('active');
+        window.scrollTo({top: 0});
+    }
+
+    function openModal(dayIdx, itemIdx) {
+        const data = tripData[dayIdx].items[itemIdx];
+        const detail = data.detail;
+        if (!detail) return;
+
+        document.getElementById('modal-title').innerText = data.title;
+        
+        // Image Handling
+        const imgWrapper = document.getElementById('modal-img-wrapper');
+        const imgEl = document.getElementById('modal-image');
+        if (detail.img) {
+            imgEl.src = detail.img;
+            imgWrapper.style.display = 'block';
+        } else {
+            imgWrapper.style.display = 'none';
+        }
+
+        let html = `
+            <div class="detail-summary">${detail.summary}</div>
+            
+            <div class="detail-h3"><i class="fas fa-map-pin"></i> 必逛/必看</div>
+            <ul class="detail-list">
+                ${detail.spots.map(s => `<li>${s}</li>`).join('')}
+            </ul>
+
+            <div class="detail-h3"><i class="fas fa-check-circle"></i> 必做體驗</div>
+            <ul class="detail-list">
+                ${detail.mustDo.map(s => `<li>${s}</li>`).join('')}
+            </ul>
+        `;
+
+        if (detail.buy && detail.buy[0] !== "無") {
+            html += `
+            <div class="detail-h3"><i class="fas fa-shopping-bag"></i> 必買伴手禮</div>
+            <ul class="detail-list">
+                ${detail.buy.map(s => `<li>${s}</li>`).join('')}
+            </ul>`;
+        }
+
+        if (detail.history) {
+            html += `<div class="detail-history"><strong>💡 歷史小知識：</strong><br>${detail.history}</div>`;
+        }
+
+        document.getElementById('modal-content').innerHTML = html;
+        document.getElementById('detail-modal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('detail-modal').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+</script>
+
+</body>
+</html>
